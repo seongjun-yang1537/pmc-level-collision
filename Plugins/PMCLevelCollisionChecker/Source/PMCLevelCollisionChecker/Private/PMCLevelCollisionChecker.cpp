@@ -1,6 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "PMCLevelCollisionChecker.h"
+#include "CollisionCheckerUI.h"
 
 #define LOCTEXT_NAMESPACE "FPMCLevelCollisionCheckerModule"
 #define DOCKTAB_NAME "PMCColiisionCheckerDockTab"
@@ -67,8 +68,7 @@ TSharedRef<SDockTab> FPMCLevelCollisionCheckerModule::CreateDockTab(const FSpawn
 		+SVerticalBox::Slot()
 		.AutoHeight()
 		[
-			SNew(STextBlock)
-				.Text(FText::FromString("Hello"))
+			SNew(SCollisionCheckerUI)
 		]
 	];
 }
