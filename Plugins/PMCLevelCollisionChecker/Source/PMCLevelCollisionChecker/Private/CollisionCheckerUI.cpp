@@ -1,4 +1,5 @@
 #include "CollisionCheckerUI.h"
+#include "CollisionActorViewer.h"
 #include "CollisionActorList.h"
 
 #pragma region Public
@@ -8,7 +9,7 @@ void SCollisionCheckerUI::Construct(const FArguments& args)
 	[
 		SNew(SVerticalBox)
 		+ SVerticalBox::Slot()
-		.MaxHeight(24)
+		.AutoHeight()
 		[
 			SNew(SHorizontalBox)
 			+ SHorizontalBox::Slot()
@@ -19,6 +20,12 @@ void SCollisionCheckerUI::Construct(const FArguments& args)
 			.AutoWidth()
 			[
 				CreateValidateButton()
+			]
+			+ SHorizontalBox::Slot()
+			.AutoWidth()
+			[
+				SNew(SCollisionActorViewer)
+				.OnCheckCollision(&OnCheckCollision)
 			]
 		]
 		+ SVerticalBox::Slot()
