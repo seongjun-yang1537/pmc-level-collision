@@ -8,13 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dd44caf-82e2-4aba-8e1b-a9e949eee33b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionChecker.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionChecker.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PMCLevelCollision.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PMCLevelCollision.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/PMCLevelCollisionChecker.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/PMCLevelCollisionChecker.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/PMCLevelCollisionChecker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/PMCLevelCollisionChecker.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736820237626</updated>
-      <workItem from="1736820239272" duration="3568000" />
+      <workItem from="1736820239272" duration="3881000" />
     </task>
     <servers />
   </component>

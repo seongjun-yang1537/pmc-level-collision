@@ -8,14 +8,29 @@ void SCollisionCheckerUI::Construct(const FArguments& args)
 	[
 		SNew(SVerticalBox)
 		+ SVerticalBox::Slot()
+		.AutoHeight()
 		[
-			CreateCollisionPresetDropDownList()	
+			SNew(SHorizontalBox)
+			+ SHorizontalBox::Slot()
+			[
+				CreateCollisionPresetDropDownList()	
+			]
+			+ SHorizontalBox::Slot()
+			.AutoWidth()
+			[
+				CreateValidateButton()
+			]
 		]
 	];
 }
 #pragma endregion
 
 #pragma region Private
+FText SCollisionCheckerUI::GetSelecedPreset() const
+{
+	return FText::FromString(SelectedPreset.ToString());
+}
+
 TSharedRef<SWidget> SCollisionCheckerUI::CreateCollisionPresetDropDownList()
 {
 	CollisionPresetNames.Reset();
@@ -37,9 +52,15 @@ TSharedRef<SWidget> SCollisionCheckerUI::CreateCollisionPresetDropDownList()
 		];
 }
 
-FText SCollisionCheckerUI::GetSelecedPreset() const
+TSharedRef<SWidget> SCollisionCheckerUI::CreateValidateButton()
 {
-	return FText::FromString(SelectedPreset.ToString());
+	return SNew(SButton)
+	.Text(FText::FromString("Find"))
+	.OnClicked_Lambda([]()
+	{
+		UE_LOG(LogTemp, Log, TEXT("hihihi"));
+		return FReply::Handled();
+	});
 }
 
 TSharedRef<SWidget> SCollisionCheckerUI::OnGenerateDropDownElement(TSharedPtr<FName> Element)

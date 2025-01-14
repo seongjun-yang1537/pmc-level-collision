@@ -13,10 +13,12 @@ public:
 
 private:
 	TArray<TSharedPtr<FName>> CollisionPresetNames;
+	
 	FName SelectedPreset;
+	FText GetSelecedPreset() const;
 	
 	TSharedRef<SWidget> CreateCollisionPresetDropDownList();
-	FText GetSelecedPreset() const;
+	TSharedRef<SWidget> CreateValidateButton();
 	
 	TSharedRef<SWidget> OnGenerateDropDownElement(TSharedPtr<FName> Element);
 };
