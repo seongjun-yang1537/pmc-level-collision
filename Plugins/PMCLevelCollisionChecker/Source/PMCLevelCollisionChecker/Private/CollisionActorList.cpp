@@ -55,7 +55,7 @@ void SCollisionActorList::UpdateListWidget()
 	const TArray<AActor*>& Actors = World->PersistentLevel->Actors;
 	for (auto Actor : Actors)
 	{
-		if (Actor)
+		if (Actor && IsVisible(Actor))
 		{
 			ActorList.Add(Actor);
 		}
@@ -63,7 +63,6 @@ void SCollisionActorList::UpdateListWidget()
 
 	if (ActorListWidget.IsValid())
 	{
-		ActorListWidget->SetItemsSource(&ActorList);
 		ActorListWidget->RebuildList();
 	}
 }
@@ -97,7 +96,7 @@ bool SCollisionActorList::IsVisible(AActor* Actor) const
 
 TSharedRef<ITableRow> SCollisionActorList::OnGenerateElement(AActor* Item, const TSharedRef<STableViewBase>& OwnerTable)
 {
-	if (!Item || !IsVisible(Item))
+	if (!Item)
 	{
 		return SNew(STableRow<AActor*>, OwnerTable)
 		[
