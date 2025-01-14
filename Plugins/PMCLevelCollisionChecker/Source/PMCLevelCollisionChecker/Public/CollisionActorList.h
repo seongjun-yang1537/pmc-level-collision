@@ -15,14 +15,11 @@ public:
 	void Construct(const FArguments& InArgs);
 
 private:
-	FName NowPresetName;
-	
 	FOnCheckCollision* OnCheckCollision;
 	TArray<AActor*> ActorList;
 	
 	TSharedPtr<SListView<AActor*>> ActorListWidget;
-	void UpdateListWidget();
-	bool IsVisible(AActor* Actor) const;
+	void UpdateListWidget(FName PresetName);
 	TSharedRef<ITableRow> OnGenerateElement(AActor* Item, const TSharedRef<STableViewBase>& OwnerTable);
 
 	void SelectActor(AActor* Actor);

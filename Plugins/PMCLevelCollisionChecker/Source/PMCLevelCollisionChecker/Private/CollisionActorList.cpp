@@ -1,5 +1,6 @@
 #include "CollisionActorList.h"
 #include "CollisionActorElement.h"
+#include "CollisionActorChecker.h"
 
 #pragma region Public
 
@@ -8,10 +9,9 @@ void SCollisionActorList::Construct(const FArguments& InArgs)
 	OnCheckCollision = InArgs._OnCheckCollision;
 	OnCheckCollision->AddLambda([&](FName PresetName)
 	{
-		NowPresetName = PresetName;
-		UpdateListWidget();
+		UpdateListWidget(PresetName);
 	});
-	UpdateListWidget();
+	UpdateListWidget(FName("Default"));
 	
 	ChildSlot[
 		SNew(SVerticalBox)
@@ -38,60 +38,15 @@ void SCollisionActorList::Construct(const FArguments& InArgs)
 #pragma endregion
 
 #pragma region Private
-void SCollisionActorList::UpdateListWidget()
+void SCollisionActorList::UpdateListWidget(FName PresetName)
 {
-	if (!GEditor)
-	{
-		return;
-	}
-	
-	UWorld* World = GEditor->GetEditorWorldContext().World();
-	if (!World)
-	{
-		return;
-	}
-
 	ActorList.Reset();
-	const TArray<AActor*>& Actors = World->PersistentLevel->Actors;
-	for (auto Actor : Actors)
-	{
-		if (Actor && IsVisible(Actor))
-		{
-			ActorList.Add(Actor);
-		}
-	}
+	ActorList = FCollisionActorChecker::GetActorsByCollisionPreset(PresetName);
 
 	if (ActorListWidget.IsValid())
 	{
 		ActorListWidget->RebuildList();
 	}
-}
-
-bool SCollisionActorList::IsVisible(AActor* Actor) const
-{
-	TArray<UActorComponent*> Components = Actor->K2_GetComponentsByClass(UPrimitiveComponent::StaticClass());
-
-	for (auto Component : Components)
-	{
-		if (!Component)
-		{
-			continue;
-		}
-			
-		UPrimitiveComponent* PrimitiveComponent =
-				Cast<UPrimitiveComponent>(Component);
-		if (!PrimitiveComponent)
-		{
-			continue;
-		}
-
-		FName CurrentPreset = PrimitiveComponent->GetCollisionProfileName();
-		if (CurrentPreset == NowPresetName)
-		{
-			return true;
-		}
-	}
-	return false;
 }
 
 TSharedRef<ITableRow> SCollisionActorList::OnGenerateElement(AActor* Item, const TSharedRef<STableViewBase>& OwnerTable)
