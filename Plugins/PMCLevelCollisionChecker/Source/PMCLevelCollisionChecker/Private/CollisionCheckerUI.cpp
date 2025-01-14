@@ -41,7 +41,7 @@ TSharedRef<SWidget> SCollisionCheckerUI::CreateCollisionPresetDropDownList()
 	CollisionPresetNames.Reset();
 	UCollisionProfile::GetProfileNames(CollisionPresetNames);
 	
-	auto OnSelected = [this](TSharedPtr<FName> NewSelection, ESelectInfo::Type SelectInfo)
+	auto OnSelected = [&](TSharedPtr<FName> NewSelection, ESelectInfo::Type SelectInfo)
 	{
 		SelectedPreset = *NewSelection;
 	};
@@ -63,8 +63,7 @@ TSharedRef<SWidget> SCollisionCheckerUI::CreateValidateButton()
 	.Text(FText::FromString("Find"))
 	.OnClicked_Lambda([this]()
 	{
-		UE_LOG(LogTemp, Log, TEXT("Broadcast"));
-		OnCheckCollision.Broadcast();
+		OnCheckCollision.Broadcast(SelectedPreset);
 		return FReply::Handled();
 	});
 }

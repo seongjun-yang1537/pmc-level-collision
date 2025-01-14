@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Widgets/SCompoundWidget.h"
 
-DECLARE_MULTICAST_DELEGATE(FOnCheckCollision);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnCheckCollision, FName);
 
 class SCollisionCheckerUI : public SCompoundWidget  
 {

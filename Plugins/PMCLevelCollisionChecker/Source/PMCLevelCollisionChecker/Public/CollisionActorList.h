@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Widgets/SCompoundWidget.h"
 
-DECLARE_MULTICAST_DELEGATE(FOnCheckCollision);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnCheckCollision, FName);
 
 class SCollisionActorList : public SCompoundWidget
 {
@@ -15,10 +15,13 @@ public:
 	void Construct(const FArguments& InArgs);
 
 private:
+	FName NowPresetName;
+	
 	FOnCheckCollision* OnCheckCollision;
 	TArray<AActor*> ActorList;
 	
 	TSharedPtr<SListView<AActor*>> ActorListWidget;
 	void UpdateListWidget();
+	bool IsVisible(AActor* Actor) const;
 	TSharedRef<ITableRow> OnGenerateElement(AActor* Item, const TSharedRef<STableViewBase>& OwnerTable);
 };
