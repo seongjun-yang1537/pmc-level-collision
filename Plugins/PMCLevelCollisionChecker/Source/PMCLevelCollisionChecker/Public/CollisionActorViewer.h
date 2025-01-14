@@ -15,15 +15,10 @@ public:
 	void Construct(const FArguments& InArgs);
 
 private:
-	const FSlateIcon VisibleIcons[2] = {
-		FSlateIcon(FAppStyle::GetAppStyleSetName(), "Level.NotVisibleIcon16x"),
-		FSlateIcon(FAppStyle::GetAppStyleSetName(), "Level.VisibleIcon16x")
-	};
-	
-	bool bState;
 	FName PresetName;
 	FOnCheckCollision* OnCheckCollision;
 	
 	FReply OnClicked();
 	void UpdateVisible();
+	void DebugDrawActor(AActor* Actor);
 };
