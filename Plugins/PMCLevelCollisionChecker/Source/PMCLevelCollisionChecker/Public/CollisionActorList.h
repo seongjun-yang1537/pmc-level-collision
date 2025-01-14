@@ -24,4 +24,6 @@ private:
 	void UpdateListWidget();
 	bool IsVisible(AActor* Actor) const;
 	TSharedRef<ITableRow> OnGenerateElement(AActor* Item, const TSharedRef<STableViewBase>& OwnerTable);
+
+	void SelectActor(AActor* Actor);
 };

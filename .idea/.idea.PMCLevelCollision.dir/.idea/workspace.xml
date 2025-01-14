@@ -8,11 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dd44caf-82e2-4aba-8e1b-a9e949eee33b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionActorElement.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionActorElement.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PMCLevelCollision.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PMCLevelCollision.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionActorList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionActorList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionActorList.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionActorList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionChecker.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionChecker.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/DetailCustomizations/Private/CollisionProfileDetails.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/UnrealEd/Classes/Editor/EditorEngine.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/CollisionProfile.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Public/EngineUtils.h" root0="FORCE_HIGHLIGHTING" />
@@ -38,7 +40,6 @@
     <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/CollisionCheckerUI.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Private/PMCLevelCollisionChecker.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionActorList.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionChecker.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/CollisionCheckerUI.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/PMCLevelCollisionChecker/Source/PMCLevelCollisionChecker/Public/PMCLevelCollisionChecker.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -148,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736820237626</updated>
-      <workItem from="1736820239272" duration="12701000" />
+      <workItem from="1736820239272" duration="13438000" />
     </task>
     <servers />
   </component>

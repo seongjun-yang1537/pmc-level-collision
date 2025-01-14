@@ -1,5 +1,5 @@
 #include "CollisionActorList.h"
-#include "Engine.h"
+#include "CollisionActorElement.h"
 
 #pragma region Public
 
@@ -105,8 +105,21 @@ TSharedRef<ITableRow> SCollisionActorList::OnGenerateElement(AActor* Item, const
 	}
 	return SNew(STableRow<AActor*>, OwnerTable)
 	[
-		SNew(STextBlock)
+		SNew(SButton)
 		.Text(FText::FromString(Item->GetActorLabel()))
+			.OnClicked_Lambda([this, Item]()
+			{
+				SelectActor(Item);
+				return FReply::Handled();
+			})
 	];
 }
+
+void SCollisionActorList::SelectActor(AActor* Actor)
+{
+	GEditor->SelectNone(false, true);
+	GEditor->SelectActor(Actor, true, true);
+	GEditor->MoveViewportCamerasToActor(*Actor, true);
+}
+
 #pragma endregion 
