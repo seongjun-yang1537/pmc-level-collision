@@ -40,6 +40,7 @@ public class PMCLevelCollisionChecker : ModuleRules
 				"SlateCore",
 				"ToolMenus",
 				"InputCore",
+				"UnrealEd",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

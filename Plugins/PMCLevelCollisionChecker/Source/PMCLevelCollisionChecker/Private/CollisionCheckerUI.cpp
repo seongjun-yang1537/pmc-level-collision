@@ -1,5 +1,5 @@
 #include "CollisionCheckerUI.h"
-#include "CollisionChecker.h"
+#include "CollisionActorList.h"
 
 #pragma region Public
 void SCollisionCheckerUI::Construct(const FArguments& args)
@@ -8,7 +8,7 @@ void SCollisionCheckerUI::Construct(const FArguments& args)
 	[
 		SNew(SVerticalBox)
 		+ SVerticalBox::Slot()
-		.AutoHeight()
+		.MaxHeight(24)
 		[
 			SNew(SHorizontalBox)
 			+ SHorizontalBox::Slot()
@@ -20,6 +20,11 @@ void SCollisionCheckerUI::Construct(const FArguments& args)
 			[
 				CreateValidateButton()
 			]
+		]
+		+ SVerticalBox::Slot()
+		[
+			SNew(SCollisionActorList)
+			.OnCheckCollision(&OnCheckCollision)
 		]
 	];
 }
@@ -56,9 +61,10 @@ TSharedRef<SWidget> SCollisionCheckerUI::CreateValidateButton()
 {
 	return SNew(SButton)
 	.Text(FText::FromString("Find"))
-	.OnClicked_Lambda([]()
+	.OnClicked_Lambda([this]()
 	{
-		UE_LOG(LogTemp, Log, TEXT("hihihi"));
+		UE_LOG(LogTemp, Log, TEXT("Broadcast"));
+		OnCheckCollision.Broadcast();
 		return FReply::Handled();
 	});
 }
